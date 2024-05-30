@@ -1,9 +1,10 @@
 import '../StyleSheets/PagesCSS/Loading.css';
 import { DarkMode } from '../Components/DarkMode';
 
+
 function Loading({ isDark, setIsDark }) {
   return (
-    <div className='Loading'>
+    <div className='Loading' data-theme={isDark ? "dark" : "light"}>
       <div className="LoadingSide"></div>
       <div className="LoadingCenter">
         <h1>WELCOME</h1>
