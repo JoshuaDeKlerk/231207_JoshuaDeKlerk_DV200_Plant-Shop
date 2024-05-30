@@ -1,13 +1,30 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Averia Serif Libre", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Averia Serif Libre", serif;
+}
+
+/* LightMode Css */
+:root {
+  --background-color: rgba(20, 20, 20, 1);
+  --secondary-color: rgba(245, 236, 229, 1);
+  --tertiary-color: rgba(69, 82, 62, 1);
+  --fourth-color: rgba(176, 172, 162, 1);
+  --fifth-color: rgba(173, 93, 80, 1);
+  --image-loading: url(./Assets/Loading/LoadingBackground.png)
+}
+
+/* DarkMode Css */
+[data-theme="dark"] {
+  --background-color: rgba(245, 236, 229, 1);
+  --secondary-color: rgba(20, 20, 20, 1);
+  --tertiary-color: rgba(69, 82, 62, 1);
+  --fourth-color: rgba(176, 172, 162, 1);
+  --fifth-color: rgba(173, 93, 80, 1);
+  --image-loading: url(./Assets/Loading/LoadingBackgroundDark.png)
 }

@@ -1,0 +1,101 @@
+body {
+    font-family: "Averia Serif Libre", serif;
+}
+  
+
+.Loading{
+    height: 100vh;
+    width: 100%;
+    background-image: var(--image-loading);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+}
+
+.LoadingSide{
+    width: 25%;
+}
+
+.LoadingCenter{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Averia Serif Libre", serif;
+    color: var(--background-color);
+}
+
+.LoadingCenter h1{
+    font-size: 80px;
+    padding-bottom: 10px;
+}
+
+.LoadingCenter h4{
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+.LoadingLogoText{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+}
+
+.LoadingLogoText svg path {
+    fill: var(--background-color);
+}
+
+/* Buttons */
+
+.LoadingButtonContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    padding-top: 100px;
+}
+
+.LoadingButton{
+    padding: 10px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+    border-radius: 50px;
+    border: 1px solid var(--background-color);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.LoadingButton:hover{
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+}
+
+.LoadingSide{
+    display: flex;
+    align-items: start;
+    justify-content: left;
+}
+
+.DarkModeContainer{
+    margin-top: 100px;
+    border-radius: 50px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--background-color);
+}
+
+.DarkModeContainer h2{
+    color: var(--background-color);
+    text-align: center;
+    font-size: 25px;
+    margin-left: 20px;
+}
