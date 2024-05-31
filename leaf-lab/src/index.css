@@ -12,19 +12,25 @@ code {
 /* LightMode Css */
 :root {
   --background-color: rgba(20, 20, 20, 1);
+  --background-color-faded: rgba(20, 20, 20, 0.3);
   --secondary-color: rgba(245, 236, 229, 1);
+  --darker-secondary-color: rgb(228, 218, 211);
   --tertiary-color: rgba(69, 82, 62, 1);
   --fourth-color: rgba(176, 172, 162, 1);
   --fifth-color: rgba(173, 93, 80, 1);
-  --image-loading: url(./Assets/Loading/LoadingBackground.png)
+  --image-loading: url(./Assets/Loading/LoadingBackground.png);
+  --image-SignUp: url(./Assets/SignIn/Sunrise.png);
 }
 
 /* DarkMode Css */
 [data-theme="dark"] {
   --background-color: rgba(245, 236, 229, 1);
+  --background-color-faded: rgba(245, 236, 229, 0.3);
   --secondary-color: rgba(20, 20, 20, 1);
-  --tertiary-color: rgba(69, 82, 62, 1);
-  --fourth-color: rgba(176, 172, 162, 1);
+  --darker-secondary-color: rgb(39, 39, 39);
+  --tertiary-color: rgba(176, 172, 162, 1);
+  --fourth-color: rgba(69, 82, 62, 1);
   --fifth-color: rgba(173, 93, 80, 1);
-  --image-loading: url(./Assets/Loading/LoadingBackgroundDark.png)
+  --image-loading: url(./Assets/Loading/LoadingBackgroundDark.png);
+  --image-SignUp: url(./Assets/SignIn/Moonrise.png);
 }

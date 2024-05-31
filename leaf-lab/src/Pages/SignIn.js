@@ -2,7 +2,7 @@ import '../StyleSheets/PagesCSS/SignIn.css';
 import { useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function SignIn() {
   const navigate = useNavigate()
@@ -24,7 +24,7 @@ function SignIn() {
           toast.error(data.error)
         } else {
           setData({ name: '', email: '', password: '' });
-          navigate('/Dashboard')
+          navigate('/Home')
         }
       } catch (error) {
         
@@ -32,14 +32,32 @@ function SignIn() {
   }
 
   return (
-    <div>
-      <form onSubmit={loginUser}>
-        <label>Email</label>
-        <input type='email' placeholder='enter email...' value={data.email} onChange={(e) => setData({...data, email: e.target.value})} />
-        <label>Password</label>
-        <input type='password' placeholder='enter password...' value={data.password} onChange={(e) => setData({...data, password: e.target.value})} />
-        <button type='submit'>Login</button>
-      </form>
+    <div className='SignIn'>
+      <div className="SignInContainer">
+        <div className='SignInLeft'></div>
+        <div className='SignInRight'>
+          <form onSubmit={loginUser} className='FormContainer'>
+            <h1>Sign In</h1>
+            
+            <h2>Sign in to one your account</h2>
+
+            <div className='TextFields'>
+              <input type='email' placeholder='Email' value={data.email} onChange={(e) => setData({...data, email: e.target.value})} />
+            </div>
+
+            <div className='TextFields'>
+              <input type='password' placeholder='Password' value={data.password} onChange={(e) => setData({...data, password: e.target.value})} />
+            </div>
+
+            <button type='submit'>Login</button>
+
+            <Link to={'/SignUp'} className='SignUpLink'>
+              Do not have an account?
+            </Link>
+          </form>
+        </div>
+      </div>
+      
     </div>
   );
 }

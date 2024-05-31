@@ -2,7 +2,7 @@ import '../StyleSheets/PagesCSS/SignUp.css';
 import { useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 function SignUp() {
@@ -33,16 +33,36 @@ function SignUp() {
   };
 
   return (
-    <div>
-      <form onSubmit={registerUser}>
-        <label>Name</label>
-        <input type='text' placeholder='enter name...' value={data.name} onChange={(e) => setData({...data, name: e.target.value})} />
-        <label>Email</label>
-        <input type='email' placeholder='enter email...' value={data.email} onChange={(e) => setData({...data, email: e.target.value})} />
-        <label>Password</label>
-        <input type='password' placeholder='enter password...' value={data.password} onChange={(e) => setData({...data, password: e.target.value})} />
-        <button type='submit'>Submit</button>
-      </form>
+    <div className='SignUp'>
+      <div className="SignUpContainer">
+        <div className="SignUpLeft">
+          <form onSubmit={registerUser} className='FormContainer'>
+            <h1>Sign Up</h1>
+
+            <h2>Sign up to explore our site</h2>
+
+            <div className="TextFields">
+              <input type='text' placeholder='Name' value={data.name} onChange={(e) => setData({...data, name: e.target.value})} />
+            </div>
+            
+            <div className="TextFields">
+              <input type='email' placeholder='Email' value={data.email} onChange={(e) => setData({...data, email: e.target.value})} />
+            </div>
+            
+            <div className="TextFields">
+              <input type='password' placeholder='Password' value={data.password} onChange={(e) => setData({...data, password: e.target.value})} />
+            </div>
+
+            <button type='submit'>Submit</button>
+
+            <Link to={'/SignIn'} className='SignInLink'>
+              Already have account?
+            </Link>
+          </form>
+        </div>
+        <div className="SignUpRight"></div>
+      </div>
+      
     </div>
   );
 }

@@ -1,0 +1,50 @@
+.SignUp{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--darker-secondary-color);
+}
+
+.SignUpContainer{
+    width: 1000px;
+    height: 60vh;
+    background-color: var(--secondary-color);
+    display: flex;
+    border-radius: 25px;
+}
+
+.SignUpRight{
+    width: 30%;
+    height: 100%;
+    background-image: var(--image-SignUp);
+    background-size: cover;
+    border-radius: 0 25px 25px 0;
+}
+
+.SignUpLeft{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-color);
+    border-radius: 25px 0 0 25px;
+}
+
+.SignInLink{
+    text-decoration: none;
+    padding-top: 20px;
+    color: var(--fifth-color);
+    font-size: 18px;
+    font-family: "Averia Serif Libre", serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.SignInLink:hover {
+    color: var(--tertiary-color);
+    font-weight: bold;
+}
