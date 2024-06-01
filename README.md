@@ -9,7 +9,7 @@ Leaf Lab is an online portal for browsing and booking plants. This project is bu
 - [Setup](#setup)
 - [Running the Project](#running-the-project)
 - [Features](#features)
-- [Screenshots](#screenshots)
+- [Mockups](#mockups)
 
 ## Prerequisites
 
@@ -26,8 +26,8 @@ Before you begin, ensure you have the following installed on your machine:
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/your-username/leaf-lab.git
-    cd leaf-lab/backend
+    git clone https://github.com/JoshuaDeKlerk/231207_JoshuaDeKlerk_DV200_Plant-Shop.git
+    cd mern-backend
     ```
 
 2. Install backend dependencies:
@@ -41,7 +41,7 @@ Before you begin, ensure you have the following installed on your machine:
 1. Navigate to the frontend directory:
 
     ```sh
-    cd ../frontend
+    cd leaf-lab
     ```
 
 2. Install frontend dependencies:
@@ -106,27 +106,24 @@ Before you begin, ensure you have the following installed on your machine:
 - Add, edit, and delete plants
 - Purchase plants
 
-## Screenshots
+## Demo Video
+[DemoVideo](https://drive.google.com/file/d/1DOoE6rlhsyRqE2XmRghbdl448w3AlvML/view?usp=sharing)
 
-### Home Page
+## Mockups
 
-![Home Page](path_to_your_image/home_page.png)
+![Home Page](./leaf-lab/src/Assets/MockUps/Home.png)
 
-### Browse Plants
+![Loading](./leaf-lab/src/Assets/MockUps/Loading,%20Browse,%20Edit.png)
 
-![Browse Plants](path_to_your_image/browse_plants.png)
+![My Plants](./leaf-lab/src/Assets/MockUps/My%20Plants,%20Sign%20In,%20Sign%20Up,%20Product%20Details.png)
 
-### Plant Details
+![Dark Loading](./leaf-lab/src/Assets/MockUps/Dark%20Loading,%20Sign%20In,%20Sign%20Up.png)
 
-![Plant Details](path_to_your_image/plant_details.png)
+![Dark Home](./leaf-lab/src/Assets/MockUps/Darl,%20Product%20Details,%20Home,%20My%20Plants.png)
 
-### Add Plant
+![Edit Plant](./leaf-lab/src/Assets/MockUps/Dark%20Edit%20Plant.png)
 
-![Add Plant](path_to_your_image/add_plant.png)
 
-### User Profile
-
-![User Profile](path_to_your_image/user_profile.png)
 
 ---
 
