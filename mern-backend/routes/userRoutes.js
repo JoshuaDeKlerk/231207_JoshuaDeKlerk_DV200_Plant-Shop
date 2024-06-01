@@ -1,7 +1,9 @@
+// routes/userroutes.js
 const express = require('express');
 const router = express.Router();
 const cors = require('cors');
-const { test, SignUpUser, SignInUser, GetProfile } = require('../controllers/userControllers')
+const { test, SignUpUser, SignInUser, GetProfile, LogoutUser, DeleteAccount } = require('../controllers/userControllers');
+const { verifyToken } = require('../middleware/authMiddleware');
 
 // Middleware
 router.use(
@@ -14,6 +16,8 @@ router.use(
 router.get('/', test);
 router.post('/SignUp', SignUpUser);
 router.post('/SignIn', SignInUser);
-router.get('/Profile', GetProfile)
+router.get('/Profile', GetProfile);
+router.post('/Logout', LogoutUser);
+router.delete('/DeleteAccount', verifyToken, DeleteAccount);
 
-module.exports = router
+module.exports = router;

@@ -1,0 +1,35 @@
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.PaginationCont{
+    width: 100%;
+}
+
+.page-link{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: var(--secondary-color) !important;
+    color: var(--background-color) !important;
+}
+
+.page-item{
+    border-radius: 50px;
+    overflow: hidden;
+    background-color: var(--secondary-color) !important; 
+}
+
+.active > .page-link,
+.page-link.active {
+  background-color : var(--background-color) !important;
+  border: var(--background-color) ;
+  color: var(--secondary-color) !important;
+}
+
+
+

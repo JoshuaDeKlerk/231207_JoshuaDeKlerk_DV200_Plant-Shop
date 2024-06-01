@@ -1,6 +1,27 @@
 .MyPlants{
-    height: 100vh;
+    height: 100%;
     width: 100%;
+}
+
+.MyPlantsSection{
+    padding: 30px 200px;
+    background-color: var(--darker-secondary-color);
     display: flex;
     flex-direction: column;
+    gap: 30px;
+}
+
+.TopSection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.AddPlantsContainer button{
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 50px;
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    border: none;
 }

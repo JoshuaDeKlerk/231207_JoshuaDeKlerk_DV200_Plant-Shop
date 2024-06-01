@@ -1,31 +1,54 @@
+// src/Components/NavBar.js
 import '../StyleSheets/ComponentsCss/NavBar.css';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
 import { DarkMode } from '../Components/DarkMode';
-import React, { useState } from 'react'; // Import useState
+import React, { useState, useEffect, useContext } from 'react';
 import useLocalStorage from 'use-local-storage';
+import axios from 'axios';
+import { UserContext } from '../context/userContext';
 
 function Navbar() {
     const preference = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const [isDark, setIsDark] = useLocalStorage('isDark', preference);
-    const [dropdownOpen, setDropdownOpen] = useState(false); // State for dropdown
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const { setUser } = useContext(UserContext);
+    const navigate = useNavigate();
 
-    // Function to toggle dropdown
     const toggleDropdown = () => {
-        setDropdownOpen(!dropdownOpen); // Toggle dropdown state
+        setDropdownOpen(!dropdownOpen);
     };
 
-    // Function to close dropdown when clicking outside
     const closeDropdown = (event) => {
-        if (!event.target.matches('.dropdown-toggle')) {
-            setDropdownOpen(false); // Close dropdown
+        if (!event.target.matches('.dropdown-toggle') && !event.target.closest('.dropdown-menu')) {
+            setDropdownOpen(false);
         }
     };
 
-    // Add event listener to window for clicking outside dropdown
-    React.useEffect(() => {
+    useEffect(() => {
         window.addEventListener('click', closeDropdown);
         return () => window.removeEventListener('click', closeDropdown);
     }, []);
+
+    const handleLogout = async () => {
+        try {
+            await axios.post('/Logout');
+            setUser(null);
+            navigate('/SignIn');
+        } catch (error) {
+            console.error('Error logging out:', error);
+        }
+    };
+
+    const handleDeleteAccount = async () => {
+        try {
+            await axios.delete('/DeleteAccount');
+            setUser(null);
+            navigate('/SignUp');
+        } catch (error) {
+            console.error('Error deleting account:', error);
+        }
+    };
+
 
     return (
       <div className='Navbar' data-theme={isDark ? "dark" : "light"}>
@@ -80,11 +103,11 @@ function Navbar() {
             </div>
             
             <div className="dropdown">
-                <button className="dropdown-toggle" onClick={toggleDropdown}>Profile</button>
-                <div className={dropdownOpen ? "dropdown-menu show" : "dropdown-menu"} id="dropdownMenu">
-                    <a href="#logout" className="dropdown-item">Log Out</a>
-                    <a href="#delete" className="dropdown-item DeleteAccount">Delete Account</a>
-                </div>
+                    <button className="dropdown-toggle" onClick={toggleDropdown}>Profile</button>
+                    <div className={dropdownOpen ? "dropdown-menu show" : "dropdown-menu"} id="dropdownMenu">
+                        <a href="#logout" className="dropdown-item" onClick={handleLogout}>Log Out</a>
+                        <a href="#delete" className="dropdown-item DeleteAccount" onClick={handleDeleteAccount}>Delete Account</a>
+                    </div>
             </div>
         </div>
       </div>

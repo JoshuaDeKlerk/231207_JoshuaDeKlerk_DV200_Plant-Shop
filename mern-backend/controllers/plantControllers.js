@@ -1,5 +1,5 @@
+// controllers/plantControllers.js
 const Plant = require('../models/Plant');
-const jwt = require('jsonwebtoken');
 
 // Add Plant
 const addPlant = async (req, res) => {
@@ -7,7 +7,7 @@ const addPlant = async (req, res) => {
     const { name, description, price, imageUrl } = req.body;
     const userId = req.user.id; // Use req.user.id to get the user ID from the token
 
-    console.log("User ID from token:", userId); // Log the user ID to the console
+  // Log the user ID to the console
 
     const plant = new Plant({ name, description, price, imageUrl, user: userId });
     await plant.save();
@@ -43,14 +43,37 @@ const deletePlant = async (req, res) => {
   }
 };
 
-// Get Plants
+// Get All Plants
 const getPlants = async (req, res) => {
   try {
-    const plants = await Plant.find({ user: req.user.userId });
+    const plants = await Plant.find();
     res.json(plants);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
 };
 
-module.exports = { addPlant, editPlant, deletePlant, getPlants };
+// Get User's Plants
+const getUserPlants = async (req, res) => {
+  try {
+    const plants = await Plant.find({ user: req.user.id });
+    res.json(plants);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
+// Get Plant by ID
+const getPlantById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const plant = await Plant.findById(id);
+    if (!plant) return res.status(404).json({ error: 'Plant not found' });
+    res.json(plant);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
+// Export the functions
+module.exports = { addPlant, editPlant, deletePlant, getPlants, getUserPlants, getPlantById };

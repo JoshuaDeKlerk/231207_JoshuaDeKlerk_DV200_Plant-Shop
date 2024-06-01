@@ -7,6 +7,9 @@ function Home() {
   return (
     <div className='Home'>
       <Navbar />
+      <div className="HomeContainer">
+        
+      </div>
     </div>
   );
 }

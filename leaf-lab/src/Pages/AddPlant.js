@@ -25,7 +25,7 @@ const AddPlant = () => {
       });
       if (response.status === 201) {
         toast.success('Plant added successfully!');
-        navigate('/Dashboard');
+        navigate('/MyPlants');
       }
     } catch (error) {
       console.error("Error adding plant:", error.response.data); // Log the error response data

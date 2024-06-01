@@ -1,0 +1,27 @@
+.PlantCardMyPlant{
+    height: 650px;
+    width: calc(30% - 20px); 
+    margin-bottom: 40px;
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+    box-sizing: border-box;  
+}
+
+.PlantCardPriceMyPlants{
+    padding: 10px 30px;
+    background-color: var(--background-color);
+    border-radius: 50px;
+    font-family: "Averia Serif Libre", serif;
+    color: var(--secondary-color);
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.PlantCardTextMyPlant{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}

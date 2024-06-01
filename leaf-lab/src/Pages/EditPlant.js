@@ -37,7 +37,7 @@ const EditPlant = () => {
       const response = await axios.put(`/plants/edit/${id}`, plant);
       if (response.status === 200) {
         toast.success('Plant updated successfully!');
-        navigate('/Dashboard');
+        navigate('/MyPlants');
       }
     } catch (error) {
       toast.error('Failed to update plant');

@@ -1,6 +1,31 @@
 .Browse{
     height: 100%;
     width: 100%;
+    background-color: var(--darker-secondary-color);
+}
+
+.BrowseContent{
+    padding: 30px 200px;
+    background-color: var(--darker-secondary-color);
     display: flex;
     flex-direction: column;
+    gap: 30px;
+
+}
+
+.PaginationContainer{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.SearchAndSortCont{
+    height: 10vh;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background-color: var(--background-color);
+    border-radius: 50px;
+    align-items: center;
+    padding: 10px 20px;
 }
