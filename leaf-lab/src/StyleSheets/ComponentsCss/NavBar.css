@@ -15,7 +15,9 @@
 .NavMid{
     width: 50%;
     height: 100%;
-    background-color: blue;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
 }
 
 .NavLogo{
@@ -24,4 +26,89 @@
 
 .NavLogo svg path {
     fill: var(--background-color);
+}
+
+.NavItems{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--background-color);
+    text-decoration: none;
+    font-size: 20px;
+    font-family: "Averia Serif Libre", serif;
+}
+
+.NavItems.active{
+    font-weight: 800;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+}
+
+.NavIcons svg{
+    height: 20px;
+    display: flex;
+}
+
+.NavIcons svg path {
+    fill: var(--background-color);
+}
+
+.LeftNav{
+    justify-content: end;
+    gap: 50px;
+}
+
+.NavDarkMode{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 18px;
+    color: var(--background-color);
+    font-weight: 800;
+    margin: 0;
+    font-family: "Averia Serif Libre", serif;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown toggle button */
+.dropdown-toggle {
+    background-color: var(--background-color); /* Button background color */
+    color: var(--secondary-color); /* Button text color */
+    padding: 10px 20px; /* Button padding */
+    border: none;
+    width: 150px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: var(--background-color); /* Menu background color */
+    box-shadow: 0 0 5px var(--background-color-faded); /* Menu shadow */
+    z-index: 1;
+}
+
+/* Dropdown items */
+.dropdown-item {
+    display: block;
+    padding: 10px 20px; /* Item padding */
+    text-decoration: none;
+    color: var(--background-color); /* Item text color */
+}
+
+/* Hover effect for dropdown items */
+.dropdown-item:hover {
+    background-color: var(--background-color); 
+}
+
+.DeleteAccount{
+    color: var(--background-color);
 }

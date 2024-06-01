@@ -15,10 +15,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Loading from './Pages/Loading';
 import SignIn from './Pages/SignIn';
 import SignUp from './Pages/SignUp';
-import Dashboard from './Pages/Dashboard';
 import Home from './Pages/Home';
+import Browse from './Pages/Browse';
+import MyPlants from './Pages/MyPlants';
 import AddPlant from './Pages/AddPlant';
 import EditPlant from './Pages/EditPlant';
+
 
 axios.defaults.baseURL = 'http://localhost:5000';
 axios.defaults.withCredentials = true;
@@ -37,8 +39,9 @@ function App() {
                 <Route path='/' element={<Loading isDark={isDark} setIsDark={setIsDark} />} />
                 <Route path='/SignIn' element={<SignIn isDark={isDark} setIsDark={setIsDark} />} />
                 <Route path='/SignUp' element={<SignUp isDark={isDark} setIsDark={setIsDark} />} />
-                <Route path='/Dashboard' element={<Dashboard isDark={isDark} setIsDark={setIsDark} />} />
                 <Route path='/Home' element={<Home isDark={isDark} setIsDark={setIsDark} />} />
+                <Route path='/MyPlants' element={<MyPlants isDark={isDark} setIsDark={setIsDark} />} />
+                <Route path='/Browse' element={<Browse isDark={isDark} setIsDark={setIsDark} />} />
                 <Route path='/AddPlant' element={<AddPlant isDark={isDark} setIsDark={setIsDark} />} />
                 <Route path='/EditPlant' element={<EditPlant isDark={isDark} setIsDark={setIsDark} />} />
               </Routes>

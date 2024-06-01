@@ -1,9 +1,34 @@
 import '../StyleSheets/ComponentsCss/NavBar.css';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
+import { DarkMode } from '../Components/DarkMode';
+import React, { useState } from 'react'; // Import useState
+import useLocalStorage from 'use-local-storage';
 
 function Navbar() {
+    const preference = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const [isDark, setIsDark] = useLocalStorage('isDark', preference);
+    const [dropdownOpen, setDropdownOpen] = useState(false); // State for dropdown
+
+    // Function to toggle dropdown
+    const toggleDropdown = () => {
+        setDropdownOpen(!dropdownOpen); // Toggle dropdown state
+    };
+
+    // Function to close dropdown when clicking outside
+    const closeDropdown = (event) => {
+        if (!event.target.matches('.dropdown-toggle')) {
+            setDropdownOpen(false); // Close dropdown
+        }
+    };
+
+    // Add event listener to window for clicking outside dropdown
+    React.useEffect(() => {
+        window.addEventListener('click', closeDropdown);
+        return () => window.removeEventListener('click', closeDropdown);
+    }, []);
+
     return (
-      <div className='Navbar'>
+      <div className='Navbar' data-theme={isDark ? "dark" : "light"}>
         <div className="NavSide">
             <Link to={"/Home"} className="NavLogo">
                 <svg viewBox="0 0 660 133" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -12,13 +37,56 @@ function Navbar() {
             </Link>
         </div>
         <div className="NavMid">
-            <Link to={"/Home"}>
-                <div className='NavItems'>
-                    Home
+            <NavLink to={"/Home"} className='NavItems'  activeClassName="active">
+                Home
+                <div className="NavIcons">
+                <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.00326 24.3113L5.50326 24.3113L5.50326 24.3076L3.00326 24.3113ZM3.00326 40.9003L5.50258 40.9584C5.50303 40.939 5.50326 40.9196 5.50326 40.9003H3.00326ZM14.541 53L14.4806 55.4993C14.5007 55.4998 14.5209 55.5 14.541 55.5L14.541 53ZM41.4589 53V55.5C41.4791 55.5 41.4993 55.4998 41.5194 55.4993L41.4589 53ZM52.9967 40.9003H50.4967C50.4967 40.9196 50.497 40.939 50.4974 40.9584L52.9967 40.9003ZM52.9967 24.3113L50.4967 24.3075V24.3113H52.9967ZM46.8261 11.8365L48.3401 9.84705C48.2701 9.7938 48.1974 9.74428 48.1222 9.69869L46.8261 11.8365ZM35.899 5.21162L34.601 7.34829L34.6029 7.34941L35.899 5.21162ZM20.0974 5.21162L21.3938 7.34922L21.3953 7.34833L20.0974 5.21162ZM9.17389 11.8365L7.87748 9.69888C7.80239 9.74442 7.72974 9.79389 7.65985 9.84708L9.17389 11.8365ZM37.7028 40.8531C38.5231 39.7425 38.2878 38.1772 37.1771 37.3569C36.0665 36.5365 34.5012 36.7719 33.6809 37.8825L37.7028 40.8531ZM22.3191 37.8825C21.4987 36.7719 19.9334 36.5365 18.8228 37.3569C17.7122 38.1772 17.4769 39.7425 18.2972 40.8531L22.3191 37.8825ZM0.503258 24.3113V40.9003H5.50326V24.3113H0.503258ZM0.503933 40.8422C0.320183 48.7476 6.57533 55.308 14.4806 55.4993L14.6015 50.5007C9.4556 50.3763 5.38294 46.1055 5.50258 40.9584L0.503933 40.8422ZM14.541 55.5H41.4589V50.5H14.541V55.5ZM41.5194 55.4993C49.4246 55.308 55.6799 48.7476 55.4961 40.8421L50.4974 40.9584C50.6171 46.1055 46.5444 50.3763 41.3985 50.5007L41.5194 55.4993ZM55.4967 40.9003V24.3113H50.4967V40.9003H55.4967ZM55.4967 24.3152C55.5054 18.6384 52.8574 13.2848 48.3401 9.84705L45.3121 13.8259C48.5846 16.3163 50.503 20.1947 50.4967 24.3075L55.4967 24.3152ZM48.1222 9.69869L37.195 3.07383L34.6029 7.34941L45.53 13.9743L48.1222 9.69869ZM37.1969 3.07495C31.545 -0.358335 24.4517 -0.358286 18.7996 3.07491L21.3953 7.34833C25.4526 4.88387 30.5442 4.88392 34.601 7.34829L37.1969 3.07495ZM18.801 3.07402L7.87748 9.69888L10.4703 13.9741L21.3938 7.34922L18.801 3.07402ZM7.65985 9.84708C3.14282 13.2848 0.494688 18.6384 0.503261 24.3151L5.50326 24.3076C5.49704 20.1948 7.41561 16.3163 10.6879 13.8259L7.65985 9.84708ZM33.6809 37.8825C32.3492 39.6854 30.2412 40.7491 28 40.7491V45.7491C31.828 45.7491 35.4285 43.9322 37.7028 40.8531L33.6809 37.8825ZM28 40.7491C25.7591 40.7491 23.6507 39.6854 22.3191 37.8825L18.2972 40.8531C20.5715 43.9322 24.1724 45.7491 28 45.7491V40.7491Z"/>
+                </svg>
                 </div>
-            </Link>
+            </NavLink>
+
+            <NavLink to={"/Browse"} className='NavItems'  activeClassName="active">
+                Browse
+                <div className="NavIcons">
+                <svg viewBox="0 0 62 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.2 12.5V43.75H55.8V12.5H6.2ZM9.3 9.375C11.0121 9.375 12.4 7.97589 12.4 6.25C12.4 4.52411 11.0121 3.125 9.3 3.125C7.58792 3.125 6.2 4.52411 6.2 6.25C6.2 7.97589 7.58792 9.375 9.3 9.375ZM18.6 9.375C20.3121 9.375 21.7 7.97589 21.7 6.25C21.7 4.52411 20.3121 3.125 18.6 3.125C16.8879 3.125 15.5 4.52411 15.5 6.25C15.5 7.97589 16.8879 9.375 18.6 9.375ZM6.2 0H55.8C59.2242 0 62 2.79822 62 6.25V43.75C62 47.2018 59.2242 50 55.8 50H6.2C2.77583 50 0 47.2018 0 43.75V6.25C0 2.79822 2.77583 0 6.2 0Z"/>
+                </svg>
+                </div>
+            </NavLink>
+
+            <NavLink to={"/MyPlants"} className='NavItems'  activeClassName="active">
+                My Plants
+                <div className="NavIcons">
+                <svg viewBox="0 0 40 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.125 0C17.5165 0.136454 16.9188 0.340105 16.3428 0.611001C6.3833 5.2937 0 18.3882 0 29.6098C0 40.2727 7.95853 49.032 18.125 50V0Z" />
+                <path d="M21.875 50C32.0415 49.032 40 40.2727 40 29.6098C40 28.5888 39.9473 27.5522 39.8435 26.5078L21.875 44.5828V50Z" />
+                <path d="M35.6493 12.8182C34.6768 10.9954 33.5555 9.26855 32.3 7.69058L21.875 18.1773V26.674L35.6493 12.8182Z" />
+                <path d="M29.771 4.89963C27.933 3.1261 25.8845 1.6582 23.6572 0.611001C23.0812 0.340105 22.4835 0.136454 21.875 0V12.8426L29.771 4.89963Z" />
+                <path d="M37.341 16.451L21.875 32.0087V39.2481L39.0798 21.9414C38.645 20.0862 38.0615 18.2419 37.341 16.451Z"/>
+                </svg>
+                </div>
+            </NavLink>
         </div>
-        <div className="NavSide"></div>
+        <div className="NavSide LeftNav">
+            <div className="NavDarkMode">
+                <div className="DarkModeContainerNav">
+                    <DarkMode 
+                        isChecked={isDark} 
+                        handleChange={() => setIsDark(!isDark)}
+                    />
+                </div>
+                Darkmode
+            </div>
+            
+            <div className="dropdown">
+                <button className="dropdown-toggle" onClick={toggleDropdown}>Profile</button>
+                <div className={dropdownOpen ? "dropdown-menu show" : "dropdown-menu"} id="dropdownMenu">
+                    <a href="#logout" className="dropdown-item">Log Out</a>
+                    <a href="#delete" className="dropdown-item DeleteAccount">Delete Account</a>
+                </div>
+            </div>
+        </div>
       </div>
     );
   }
