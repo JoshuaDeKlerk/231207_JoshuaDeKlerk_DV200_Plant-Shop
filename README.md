@@ -133,4 +133,3 @@ Before you begin, ensure you have the following installed on your machine:
 - The `JWT_SECRET` should be a strong, random string to ensure the security of your JWT tokens.
 - The MongoDB connection string should be a valid URI for connecting to your MongoDB instance.
 
-Feel free to customize this template further to fit the specifics of your project.
