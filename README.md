@@ -127,8 +127,6 @@ Before you begin, ensure you have the following installed on your machine:
 
 ---
 
-To include images in your README, make sure to place your screenshots in an appropriate directory within your project (e.g., `frontend/public/images`) and update the image paths accordingly.
-
 ## Additional Notes
 
 - Ensure to replace placeholder values such as `your_mongodb_connection_string` and `your_jwt_secret_key` with your actual values.
