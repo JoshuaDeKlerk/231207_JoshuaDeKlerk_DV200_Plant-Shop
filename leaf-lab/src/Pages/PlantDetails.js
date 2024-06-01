@@ -1,9 +1,10 @@
 // src/Pages/PlantDetails.js
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import Navbar from '../Components/NavBar';
-import '../StyleSheets/PagesCSS/PlantDetails.css'; // Correct import path
+import '../StyleSheets/PagesCSS/PlantDetails.css'; 
+
 
 function PlantDetails() {
   const { id } = useParams();
@@ -34,11 +35,25 @@ function PlantDetails() {
     <div className='PlantDetails'>
       <Navbar />
       <div className='PlantDetailsContent'>
-        <img src={plant.imageUrl} alt={plant.name} className='PlantDetailsImage' />
-        <h2 className='PlantDetailsName'>{plant.name}</h2>
-        <p className='PlantDetailsDescription'>{plant.description}</p>
-        <p className='PlantDetailsPrice'>${plant.price.toFixed(2)}</p>
-        <button onClick={handleBuyNow} className='BuyNowButton'>Buy Now</button>
+        <div className="PlantDetailsCard">
+          <div className="imgContainer">
+            <img src={plant.imageUrl} alt={plant.name} className='PlantDetailsImage' />
+          </div>
+          <div className="PlantInfo">
+            <div className="PlantDetailsText">
+              <h2 className='PlantDetailsName'>{plant.name}</h2>
+              <p className='PlantDetailsDescription'>{plant.description}</p>
+              <p className='PlantDetailsPrice'>${plant.price.toFixed(2)}</p>
+            </div>
+            <div className="buttonContainer">
+              <button onClick={handleBuyNow} className='BuyNowButton'>Buy Now</button>
+              <Link to={"/Browse"} className="BrowseButton">
+                Back To Browse
+              </Link>
+            </div>
+          </div>
+          
+        </div>
       </div>
     </div>
   );

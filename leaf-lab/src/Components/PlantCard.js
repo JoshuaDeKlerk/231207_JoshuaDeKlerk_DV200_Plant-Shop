@@ -19,7 +19,7 @@ function PlantCard({ plant }) {
           <p className="PlantCardDescription">{plant.description}</p>
         </div>
         <div className="PlantPriceContainer">
-          <p className="PlantCardPrice">${plant.price.toFixed(2)}</p>
+          <p className="PlantCardPrice">R{plant.price.toFixed(2)}</p>
         </div>
       </div>
     </div>

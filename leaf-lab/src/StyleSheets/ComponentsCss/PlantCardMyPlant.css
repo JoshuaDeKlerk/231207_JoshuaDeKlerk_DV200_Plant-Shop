@@ -1,10 +1,21 @@
 .PlantCardMyPlant{
-    height: 650px;
-    width: calc(30% - 20px); 
+    height: 700px;
+    width: calc(33% - 20px); 
     margin-bottom: 40px;
     background-color: var(--secondary-color);
     border-radius: 20px;
     box-sizing: border-box;  
+}
+
+.PlantCardMyPlant:hover {
+    background-color: var(--background-color-faded);
+    cursor: pointer;
+}
+
+.PlantCardImageMyPlant{
+    width: 100%;
+    height: 50%;
+    border-radius: 20px 20px 0 0;
 }
 
 .PlantCardPriceMyPlants{
@@ -24,4 +35,26 @@
     flex-direction: column;
     align-items: center;
     padding: 10px;
+}
+
+.PlantOptions{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.ButtonsEditDelete{
+    padding: 10px;
+    width: 100px;
+    border-radius: 50px;
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    border: none;
+}
+
+.ButtonsEditDelete:hover{
+    background-color: var(--darker-secondary-color);
+    color: var(--background-color);
+    border: none;
 }

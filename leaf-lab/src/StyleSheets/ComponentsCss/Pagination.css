@@ -16,12 +16,21 @@
     border-radius: 50px;
     background-color: var(--secondary-color) !important;
     color: var(--background-color) !important;
+    border: none !important;
+}
+
+
+.page-link:hover{
+    background-color: var(--background-color-faded) !important;
+    color: var(--background-color) !important;
+    border: 1px  var(--background-color) !important;
 }
 
 .page-item{
     border-radius: 50px;
     overflow: hidden;
     background-color: var(--secondary-color) !important; 
+    border: none !important;
 }
 
 .active > .page-link,

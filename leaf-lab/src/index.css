@@ -14,12 +14,15 @@ code {
   --background-color: rgba(20, 20, 20, 1);
   --background-color-faded: rgba(20, 20, 20, 0.3);
   --secondary-color: rgba(245, 236, 229, 1);
-  --darker-secondary-color: rgb(228, 218, 211);
+  --darker-secondary-color: rgb(207, 200, 195);
   --tertiary-color: rgba(69, 82, 62, 1);
   --fourth-color: rgba(176, 172, 162, 1);
   --fifth-color: rgba(173, 93, 80, 1);
   --image-loading: url(./Assets/Loading/LoadingBackground.png);
   --image-SignUp: url(./Assets/SignIn/Sunrise.png);
+  --image-Home: url(./Assets/Home/HomeLight.png);
+  --image-Add: url(./Assets/Addpicture/DarkAdd.png);
+  --image-Add-back: url(./Assets/Addpicture/BackgroundDark.png);
 }
 
 /* DarkMode Css */
@@ -33,4 +36,7 @@ code {
   --fifth-color: rgba(173, 93, 80, 1);
   --image-loading: url(./Assets/Loading/LoadingBackgroundDark.png);
   --image-SignUp: url(./Assets/SignIn/Moonrise.png);
+  --image-Home: url(./Assets/Home/HomeDark.png);
+  --image-Add: url(./Assets/Addpicture/LightAdd.png);
+  --image-Add-back: url(./Assets/Addpicture/BackgroundLight.png);
 }

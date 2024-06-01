@@ -1,0 +1,130 @@
+.PlantContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-image: var(--image-Add-back);
+}
+  
+.PlantContent{
+    width: 1000px;
+    height: 550px;
+    background-color: var(--darker-secondary-color);
+    display: flex;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.PlantImgCont{
+    width: 700px;
+    height: 100%;
+    background-color: var(--background-color-faded);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview-image{
+    width: 100%;
+    height: 100%;
+}
+
+.IconAdd{
+    height: 100px;
+    width: 100px;
+    background-image: var(--image-Add);
+    background-size: cover;
+}
+
+.PlantForm{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--background-color);
+}
+
+.PlantForm h2{
+    padding-bottom: 20px;
+}
+
+.input-field {
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border: 1px solid var(--secondary-color);
+    background: var(--secondary-color);
+    width: 500px;
+    border-radius: 5px;
+    border-radius: 50px;
+    color: var(--background-color);
+    font-size: 16px;
+    font-family: "Averia Serif Libre", serif;
+}
+
+.input-field-description {
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border: 1px solid var(--secondary-color);
+    background: var(--secondary-color);
+    font-family: "Averia Serif Libre", serif;
+    color: var(--background-color);
+    width: 500px;
+    border-radius: 5px;
+    border-radius: 20px;
+    font-size: 16px;
+    min-height: 100px; 
+    display: flex;
+}
+  
+.input-field:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+  
+.FormButton {
+    width: 250px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    font-family: "Averia Serif Libre", serif;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .FormButton:hover {
+    background-color: var(--primary-color-darken); 
+  }
+  
+  .CancelButton {
+    margin-top: 10px;
+  }
+  
+  .CancelButton a {
+    width: 250px;
+    height: 50px;
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    border: none;
+    font-family: "Averia Serif Libre", serif;
+    border-radius: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+  
+.CancelButton a:hover {
+    background-color: var(--secondary-color); 
+    color: var(--primary-color);
+}
+

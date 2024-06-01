@@ -8,6 +8,11 @@
   box-sizing: border-box;  
 }
 
+.PlantCard:hover {
+  background-color: var(--background-color-faded);
+  cursor: pointer;
+}
+
 .PlantCardImage {
   width: 100%;
   height: 60%;
